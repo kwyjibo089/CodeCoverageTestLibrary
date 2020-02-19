@@ -20,13 +20,13 @@ jobs:
         dotnet-version: 3.1.0
     - name: Generate coverage report
       run: |
-        cd ./UnitMSTestProject/
+        cd ./CodeCoverageTestLibrary.Tests/
         dotnet test /p:CollectCoverage=true /p:CoverletOutput=TestResults/ /p:CoverletOutputFormat=lcov
     - name: Publish coverage report to coveralls.io
       uses: coverallsapp/github-action@master
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
-        path-to-lcov: ./UnitMSTestProject/TestResults/coverage.info 
+        path-to-lcov: ./CodeCoverageTestLibrary.Tests/TestResults/coverage.info 
     - name: Build and deploy package
       run: |
         cd ./CodeCoverageTestLibrary/
