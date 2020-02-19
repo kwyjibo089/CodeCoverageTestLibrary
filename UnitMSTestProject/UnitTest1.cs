@@ -9,11 +9,11 @@ namespace UnitMSTestProject
         [TestMethod]
         public void TestMethod1()
         {
-            Class1 calculator = new Class1();
-            int i1 = 2;
-            int i2 = 3;
+            Operations calculator = new Operations();
+            float i1 = 2;
+            float i2 = 3;
 
-            int result = calculator.Add(i1, i2);
+            float result = calculator.Add(i1, i2);
 
             Assert.AreEqual(i1 + i2, result);
         }
